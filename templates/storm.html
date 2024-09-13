@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cyclone</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/storm.css')}}">
+</head>
+<body>
+    <div class="storm-container">
+        <form action="{{ url_for('cyclone_disaster') }}" class="storm-left" method="POST">
+
+            <div class="storm-left-title">
+                <h2>Cyclone Prediction</h2>
+                <hr>
+            </div>
+            <input type="number" name="wind-speed-eastward" placeholder="Enter wind-speed in Eastward(m/s)" class="storm-inputs" required>
+            <input type="number" name="wind-speed-northward" placeholder="Enter wind-speed in Northward(m/s)" class="storm-inputs" required>
+            <input type="number" name="sealevel-pressure" placeholder="Enter sealevel-pressure(pascals)" class="storm-inputs" required>
+            <input type="number" name="distance-weight" placeholder="Enter distance-weight(0 to 1)" class="storm-inputs" required>
+            <button type="submit">Submit</button>
+            <!-- Section to display the prediction result or error message -->
+            <h2>Prediction Result</h2>
+            {% if prediction %}
+                <p>There is a chance of a cyclone with a severity of: <strong>{{ prediction }} mph</strong>.</p>
+                <p>It is expected to be <strong>{{ severity }}</strong></p>
+
+            {% endif %}
+
+            {% if error %}
+                <p style="color: red;">{{ error }}</p>
+            {% endif %}
+        </form>
+        <div class="storm-right">
+            <video autoplay loop muted width="80%" height="auto"><source src="{{url_for('static', filename = 'videos/cyclone.mp4')}}" type="video/mp4">
+        </div>
+    </div>
+</body>
+</html>

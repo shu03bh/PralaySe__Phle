@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earthquake</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/earthquake.css')}}">
+</head>
+<body>
+    <div class="earthquake-container">
+         <form action="{{ url_for('earthquake_disaster') }}" class="earthquake-left" method="POST">
+            <div class="earthquake-left-title">
+                <h2>Earthquake Prediction</h2>
+                <hr>
+            </div>
+            <input type="number" name="latitude" placeholder="Enter latitude(deg)" class="earthquake-inputs" required>
+            <input type="number" name="longitude" placeholder="Enter longitude(deg)" class="earthquake-inputs" required>
+            <input type="number" name="depth" placeholder="Enter depth(km)" class="earthquake-inputs" required>
+            <input type="number" name="no-of-stations" placeholder="Enter no of stations" class="earthquake-inputs" required>
+            <button type="submit">Submit</button>
+
+            <!-- Section to display the prediction result or error message -->
+            <h2>Prediction Result</h2>
+            {% if prediction %}
+                <p>There is a chance of an earthquake with a magnitude of <strong>{{ prediction }}</strong>.</p>
+                <p>It is expected to be <strong>{{ severity }}</strong></p>
+            {% endif %}
+
+            {% if error %}
+                <p style="color: red;">{{ error }}</p>
+            {% endif %}
+
+
+        </form>
+        <div class="earthquake-right">
+            <video autoplay loop muted width="80%" height="auto"><source src="{{url_for('static', filename = 'videos/earthquake.mp4')}}" type="video/mp4">
+        </div>
+    </div>
+</body>
+</html>
