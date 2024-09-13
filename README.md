@@ -4,111 +4,126 @@
 
 ## Overview
 
-**PralaySePhle** is a web app that predicts the chances of natural disasters like floods, earthquakes, storms, and droughts. By entering data such as rainfall, location, and other factors, the app uses machine learning models to help predict these disasters, allowing for better preparation and early warnings.
+**PralaySePhle** is a web-based application designed to predict the chances of natural disasters such as floods, earthquakes, storms, and droughts. By inputting data like rainfall, location, seismic activity, and weather conditions, the app uses machine learning models to forecast these disasters. This tool can help authorities and individuals prepare and take preventative actions before disasters strike.
 
 ## Key Features
 
-- **Disaster Predictions**: The app predicts:
+- **Disaster Predictions**: The app predicts the likelihood of:
   - **Floods** based on rainfall, water levels, and geography.
-  - **Earthquakes** using seismic activity and location data.
-  - **Storms** by analyzing weather conditions like wind speed and temperature.
+  - **Earthquakes** using seismic activity and tectonic data.
+  - **Storms** by analyzing wind speed, air pressure, and temperature.
   - **Droughts** based on rainfall, soil moisture, and temperature.
-- **Simple Interface**: Easy to use, just enter your data and get predictions.
-- **Accurate Models**: The app uses machine learning models trained to provide reliable disaster forecasts.
-- **Responsive Design**: The app works on mobile, tablet, and desktop devices.
-- **Video Guides**: Videos to help users navigate and understand the predictions.
+- **User-Friendly Interface**: Easy-to-use form-based inputs with detailed disaster prediction results.
+- **Accurate ML Models**: Built with reliable and tested machine learning models, providing accurate forecasts.
+- **Cross-Platform Accessibility**: The app is fully responsive and can be accessed via mobile, tablet, and desktop devices.
+- **Video Guides**: Video tutorials included for easy navigation and understanding of the app’s features.
 
-## How the Machine Learning Models Work
+## Machine Learning Models
 
-We've trained four different models, each for a specific disaster. Here’s a breakdown:
+Each disaster is predicted by a specific machine learning model. Here’s how they work:
 
 ### 1. **Flood Prediction**
 
 - **Model Type**: Random Forest Classifier
-- **Looks At**:
+- **Features Used**:
   - Rainfall (mm)
   - Water level (m)
-  - Elevation (m)
-  - Past flood history
-- **Accuracy**: 85% on test data
+  - Geographical elevation (m)
+  - Historical flood data
+- **Model Accuracy**: 85%
 
 ### 2. **Earthquake Prediction**
 
 - **Model Type**: Gradient Boosting Classifier
-- **Looks At**:
-  - Seismic activity (Richter scale)
+- **Features Used**:
+  - Seismic activity (measured on the Richter scale)
   - Depth of the earthquake (km)
-  - Tectonic plate locations
-  - Latitude and longitude
-- **Accuracy**: 82% on test data
+  - Tectonic plate data
+  - Location coordinates (latitude and longitude)
+- **Model Accuracy**: 82%
 
 ### 3. **Storm Prediction**
 
 - **Model Type**: XGBoost Classifier
-- **Looks At**:
+- **Features Used**:
   - Wind speed (km/h)
   - Air pressure (hPa)
   - Temperature (°C)
   - Humidity (%)
-- **Accuracy**: 88% on test data
+- **Model Accuracy**: 88%
 
 ### 4. **Drought Prediction**
 
 - **Model Type**: Logistic Regression
-- **Looks At**:
+- **Features Used**:
   - Rainfall (mm)
   - Temperature (°C)
   - Soil moisture (%)
-  - Drought history
-- **Accuracy**: 80% on test data
+  - Historical drought data
+- **Model Accuracy**: 80%
 
 ## Tech Stack
 
-- **Frontend**: HTML, CSS, JavaScript
-- **Backend**: Python, Flask
-- **Machine Learning**: scikit-learn, pandas, numpy
+- **Frontend**: 
+  - HTML, CSS, JavaScript
+- **Backend**: 
+  - Python (Flask framework)
+- **Machine Learning**: 
+  - scikit-learn, pandas, numpy
+- **Deployment**: 
+  - Gunicorn (optional for production)
 
 ## Project Structure
 
+The project is organized as follows:
+
 ```plaintext
 ├── static/
-│   ├── css/             # Styling files
-│   ├── js/              # JavaScript for app functionality
-│   ├── images/          # Images used in the app
-│   ├── videos/          # Video guides
+│   ├── css/              # Stylesheets for the app
+│   ├── js/               # JavaScript functionality for interactivity
+│   ├── images/           # Images used in the app, including logos
+│   ├── videos/           # Video guides for navigating the app
 ├── templates/
-│   ├── index.html       # Main homepage
-│   ├── flood.html       # Flood prediction form
-│   ├── earthquake.html  # Earthquake prediction form
-│   ├── storm.html       # Storm prediction form
-│   └── drought.html     # Drought prediction form
+│   ├── index.html        # Main homepage
+│   ├── flood.html        # Form for flood prediction
+│   ├── earthquake.html   # Form for earthquake prediction
+│   ├── storm.html        # Form for storm prediction
+│   └── drought.html      # Form for drought prediction
 ├── models/
-│   ├── flood_model.pkl  # Flood prediction model
-│   ├── earthquake_model.pkl  # Earthquake prediction model
-│   ├── storm_model.pkl  # Storm prediction model
-│   └── drought_model.pkl  # Drought prediction model
-├── screenshots/         # Screenshots of the website
-├── app.py               # Flask app backend
-├── requirements.txt     # Python package dependencies
-└── README.md            # This documentation file
+│   ├── flood_model.pkl   # Trained flood prediction model
+│   ├── earthquake_model.pkl  # Trained earthquake prediction model
+│   ├── storm_model.pkl   # Trained storm prediction model
+│   └── drought_model.pkl # Trained drought prediction model
+├── screenshots/          # Screenshots of various pages
+├── app.py                # Main Flask application file
+├── requirements.txt      # List of dependencies for the project
+└── README.md             # This documentation file
 ```
 
 ## Screenshots
 
+Here are some visuals of the app:
+
 ### Homepage
-*Add a screenshot here*
+![Homepage Screenshot](screenshots/homepage.png)
 
 ### Flood Prediction Page
-*Add a screenshot of the flood prediction page*
+![Flood Prediction Screenshot](screenshots/flood.png)
 
-*Add more screenshots for the other disasters.*
+*Add additional screenshots for the other prediction pages here.*
+
+## Video Guides
+
+You can find video tutorials in the `/static/videos/` folder that guide you through using the app and understanding how the predictions work.
 
 ## Installation
 
+Follow these steps to set up and run **PralaySePhle** locally.
+
 ### Prerequisites
 
-- Python 3.8 or higher
-- Flask, scikit-learn, numpy, pandas
+- **Python 3.8 or higher**
+- **Flask**, **scikit-learn**, **numpy**, **pandas**
 
 ### Setup Instructions
 
@@ -139,20 +154,30 @@ We've trained four different models, each for a specific disaster. Here’s a br
    http://127.0.0.1:5000/
    ```
 
-## How to Use
+## Usage
 
-- Go to the homepage and choose a disaster to predict.
-- Enter the required data (e.g., rainfall, location, temperature).
-- Click on "Predict" to get the results.
+- **Step 1**: Navigate to the homepage and select the type of disaster you want to predict (Flood, Earthquake, Storm, Drought).
+- **Step 2**: Enter the required data, such as rainfall, location, or wind speed, depending on the disaster type.
+- **Step 3**: Click "Predict" to get the results. The prediction will show whether the disaster is likely to happen based on the provided data.
+
+## Requirements
+
+Below are the main dependencies needed to run the project. These can be installed using the `requirements.txt` file.
+
+```plaintext
+Flask==3.0.3
+numpy==1.26.4
+pandas==2.1.0
+scikit-learn==1.2.2
+gunicorn==20.1.0  # Optional for production
+```
 
 ## Contributing
 
-We welcome contributions to improve the app. To contribute:
+We welcome contributions to improve **PralaySePhle**. To contribute:
+
 1. Fork the repository.
-2. Create a new branch (`git checkout -b feature-name`).
+2. Create a new branch (`git checkout -b feature-branch-name`).
 3. Commit your changes (`git commit -m 'Add new feature'`).
-4. Push the branch (`git push origin feature-name`).
-5. Open a pull request.
-
-
-This version is designed to be more user-friendly and easier to understand.
+4. Push to the branch (`git push origin feature-branch-name`).
+5. Open a pull request on GitHub.
