@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Earthquake</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/earthquake.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/styles.css')}}">
+</head>
+<body>
+
+    <header class=" header-new" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                <image src="{{url_for('static', filename = 'images/Pralay.jpeg')}}" alt="">
+                <span>PralaySePhle</span>
+            </a>
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="/" target="_blank" class="nav__link">>
+                            <i class='bx bx-home'></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/drought" target="_blank" class="nav__link">>
+                            <i class='bx bxs-shield-alt-2'></i>
+                            <span>Drought</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/storm" target="_blank" class="nav__link">>
+                            <i class='bx bx-message-square'></i>
+                            <span>Hurricane</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="/rainfall" target="_blank" class="nav__link">>
+                            <i class='bx bxs-phone'></i>
+                            <span>Flood</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!--Theme change button-->
+            <i class='bx bx-moon change-theme' id="theme-button"></i>
+
+            <a href="#" class="button nav__button">Subscribe</a>
+        </nav>
+    </header>
+
+    <div class="earthquake-container">
+         <form action="{{ url_for('earthquake_disaster') }}" class="earthquake-left" method="POST">
+            <div class="earthquake-left-title">
+                <h2>Earthquake Prediction</h2>
+                <hr>
+            </div>
+            <input type="number" name="latitude" placeholder="Enter latitude(deg)" class="earthquake-inputs" required>
+            <input type="number" name="longitude" placeholder="Enter longitude(deg)" class="earthquake-inputs" required>
+            <input type="number" name="depth" placeholder="Enter depth(km)" class="earthquake-inputs" required>
+            <input type="number" name="no-of-stations" placeholder="Enter no of stations" class="earthquake-inputs" required>
+            <button type="submit">Submit</button>
+
+            <!-- Section to display the prediction result or error message -->
+            <h2 class="para">Prediction Result</h2>
+            {% if prediction %}
+                <p class="para">There is a chance of an earthquake with a magnitude of <strong>{{ prediction }}</strong>.</p>
+                <p class="para">It is expected to be <strong>{{ severity }}</strong></p>
+            {% endif %}
+
+            {% if error %}
+                <p style="color: red;">{{ error }}</p>
+            {% endif %}
+
+
+        </form>
+        <div class="earthquake-right">
+            <video autoplay loop muted width="80%" height="auto"><source src="{{url_for('static', filename = 'videos/earthquake.mp4')}}" type="video/mp4">
+        </div>
+    </div>
+
+    <footer class="footer section">
+            <div class="footer__info container">
+                <span class="footer__copy1">
+                    &#169; Pralay. All rights reserved
+                </span>
+
+                <div class="footer__privacy1">
+                    <a href="#">Terms & Agreements</a>
+                    <a href="#">Privacy Policy</a>
+                </div>
+            </div>
+        </footer>
+
+</body>
+</html>
