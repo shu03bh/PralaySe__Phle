@@ -25,13 +25,13 @@ app = Flask(__name__, static_folder='static')
 import pickle
 
 #using unpickler to ignore unknown class
-class IgnoreUnpickler(pickle.Unpickler):
-    def find_class(self, module, name):
-        if module == "flood_predictor":
-            return object
-        return super().find_class(module, name)
-with open('model/flood.pkl', 'rb') as f:
-    flood_model = IgnoreUnpickler(f).load()
+# class IgnoreUnpickler(pickle.Unpickler):
+#     def find_class(self, module, name):
+#         if module == "flood_predictor":
+#             return object
+#         return super().find_class(module, name)
+# with open('model/flood.pkl', 'rb') as f:
+#     flood_model = IgnoreUnpickler(f).load()
 
 storm_model = pickle.load(open('model/storm.pkl', 'rb'))
 earthquake_model = pickle.load(open('model/earthquake.pkl', 'rb'))
