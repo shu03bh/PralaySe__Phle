@@ -245,7 +245,7 @@ def drought_disaster():
 
 
 if __name__ =="__main__":   #entry point
-    app.run(port=5001, debug = True)    #automatically restarts the app
+    app.run(port=8080, host="0.0.0.0", debug = True)    #automatically restarts the app
 
 
 
