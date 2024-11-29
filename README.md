@@ -105,19 +105,19 @@ The project is organized as follows:
 Here are some visuals of the app:
 
 ### Homepage
-![Homepage Screenshot](screenshots/homepage.png)
+![Homepage Screenshot](Pralay_Se_Phle-main/screenshots/homepage.png)
 
 ### Flood Prediction Page
-![Flood Prediction Screenshot](screenshots/flood.png)
+![Flood Prediction Screenshot](Pralay_Se_Phle-main/screenshots/flood.png)
 
 ### Earthquake Prediction Page
-![Earthquake Prediction Screenshot](screenshots/earthquake.png)
+![Earthquake Prediction Screenshot](Pralay_Se_Phle-main/screenshots/earthquake.png)
 
 ### Cyclone Prediction Page
-![Cyclone Prediction Screenshot](screenshots/cyclone.png)
+![Cyclone Prediction Screenshot](Pralay_Se_Phle-main/screenshots/cyclone.png)
 
 ### Drought Prediction Page
-![Drought Prediction Screenshot](screenshots/drought.png)
+![Drought Prediction Screenshot](Pralay_Se_Phle-main/screenshots/drought.png)
 
 *Add additional screenshots for the other prediction pages here.*
 
