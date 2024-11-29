@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--=============== FAVICON ===============-->
+    <link rel="shortcut icon" href="" type="image/x-icon">
+
+    <!--=============== BOXICONS ===============-->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--=============== SWIPER CSS ===============-->
+   <link rel="stylesheet" href="{{url_for('static', filename = 'css/swiper-bundle.min.css')}}">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/styles.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/chatbot.css')}}">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0">
+
+    <title>Natural disaster prediction</title>
+</head>
+
+<body>
+    <!--==================== HEADER ====================-->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="#" class="nav__logo">
+                <image src="{{url_for('static', filename = 'images/Pralay.jpeg')}}" alt="">
+                <span>PralaySePhle</span>
+            </a>
+            <div class="nav__menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#home" class="nav__link active-link">
+                            <i class='bx bx-home'></i>
+                            <span>Home</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#do&dont's" class="nav__link">
+                            <i class='bx bxs-shield-alt-2'></i>
+                            <span>Dos & Dont's</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link">
+                            <i class='bx bx-message-square'></i>
+                            <span>About</span>
+                        </a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link">
+                            <i class='bx bxs-phone'></i>
+                            <span>Contact</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!--Theme change button-->
+            <i class='bx bx-moon change-theme' id="theme-button"></i>
+
+            <a href="#helpline" class="button nav__button">Helpline</a>
+        </nav>
+    </header>
+
+    <!--==================== MAIN ====================-->
+    <main class="main">
+        <!--==================== HOME ====================-->
+        <section class="home section" id="home">
+            <div class="home__container container grid">
+                <div class="home__data">
+                    <h1 class="home__title">
+                        Natural <br> Disaster <br> Forecasting
+                    </h1>
+                    <p class="home__description">Natural disaster forecasting significantly enhances safety and
+                        resilience by providing early warnings that allow for timely evacuations and precautionary
+                        measures.</p>
+                    <!-- <form action="" class="home__search">
+                        <i class='bx bxs-map'></i>
+                        <input type="search" placeholder="Search by location" class="home__search-input">
+                        <button class="button">Predict</button>
+                    </form> -->
+                    <div class="home__value">
+                        <div>
+                            <h1 class="home__value-number">
+                                60K <span>+</span>
+                            </h1>
+                            <span class="home__value-description">
+                                Affected <br> per year
+                            </span>
+                        </div>
+                        <div>
+                            <h1 class="home__value-number">
+                                95K <span>+</span>
+                            </h1>
+                            <span class="home__value-description">
+                                Affected <br> in 2023
+                            </span>
+                        </div>
+                        <div>
+                            <h1 class="home__value-number">
+                                63K <span>+</span>
+                            </h1>
+                            <span class="home__value-description">
+                                Affected <br> by earthquake
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="home__images">
+                    <div class="home__orbe"></div>
+                    <div class="home__img">
+                        <image src="{{url_for('static', filename = 'images/image.avif')}}" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!--==================== LOGOS ====================-->
+        <section class="logos section">
+            <div class="logos__container container grid">
+                <div class="logos__img">
+                    <image src="{{url_for('static', filename = 'images/logo1.png')}}" alt="">
+                </div>
+                <div class="logos__img">
+                    <image src="{{url_for('static', filename = 'images/logo2.jpg')}}" alt="">
+                </div>
+                <div class="logos__img">
+                    <image src="{{url_for('static', filename = 'images/logo3.png')}}" alt="">
+                </div>
+                <div class="logos__img">
+                    <image src="{{url_for('static', filename = 'images/logo4.png')}}" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!--==================== POPULAR ====================-->
+        <section class="popular section" >
+            <div class="container">
+                <span class="section__subtitle">Different</span>
+                <h2 class="section__title">
+                    Natural Disasters <span>.</span>
+                </h2>
+                <div class="popular__conatainer swiper">
+                    <div class="swiper-wrapper">
+                        <article class="popular__card swiper-slide">
+                            <image src="{{url_for('static', filename = 'images/popular1.jpeg')}}" alt="" class="popular__img">
+                            <div class="popular__data">
+                                <h2 class="popular__price">
+                                    5M <span>+ affected</span>
+                                </h2>
+                                <h3 class="popular__title"> In India</h3>
+                                <p class="popular__description">
+                                    Flooding is a natural disaster that occurs when water overflows onto normally dry
+                                    land.
+                                </p>
+                                <a href="/rainfall" target="_blank">Click here to know about flood updates</a>
+                            </div>
+                        </article>
+                        <article class="popular__card swiper-slide">
+                            <image src="{{url_for('static', filename = 'images/popular5.jpeg')}}" alt="" class="popular__img">
+                            <div class="popular__data">
+                                <h2 class="popular__price">
+                                    500K <span>+ affected</span>
+                                </h2>
+                                <h3 class="popular__title">In India</h3>
+                                <p class="popular__description">
+                                    Volcanic eruptions are natural events that occur when magma from beneath the Earth's crust reaches the surface.
+                                </p>
+                                <a href="rainfall.html" target="_blank">Click here to know about Volcanic erruption updates</a>
+                            </div>
+                        </article>
+                        <article class="popular__card swiper-slide">
+                            <image src="{{url_for('static', filename = 'images/popular2.jpeg')}}" alt="" class="popular__img">
+                            <div class="popular__data">
+                                <h2 class="popular__price">
+                                    20K <span>+ affected</span>
+                                </h2>
+                                <h3 class="popular__title">In India</h3>
+                                <p class="popular__description">
+                                    Tornadoes are violent, rotating columns of air that extend from thunderstorms to the
+                                    ground.
+                                </p>
+                                <a href="/storm" target="_blank">Click here to know about tornadoes updates</a>
+                            </div>
+                        </article>
+
+                        <article class="popular__card swiper-slide">
+                            <image src="{{url_for('static', filename = 'images/popular3.jpg')}}" alt="" class="popular__img">
+                            <div class="popular__data">
+                                <h2 class="popular__price">
+                                    10M <span>+ affected</span>
+                                </h2>
+                                <h3 class="popular__title">In India</h3>
+                                <p class="popular__description">
+                                    Drought is a prolonged period of abnormally low precipitation that leads to a
+                                    shortage of water.
+                                </p>
+                                <a href="/drought" target="_blank">Click here to know about drought updates</a>
+                            </div>
+                        </article>
+
+                        <article class="popular__card swiper-slide">
+                            <image src="{{url_for('static', filename = 'images/popular4.avif')}}" alt="" class="popular__img">
+                            <div class="popular__data">
+                                <h2 class="popular__price">
+                                    70K <span>+ affected</span>
+                                </h2>
+                                <h3 class="popular__title">In India</h3>
+                                <p class="popular__description">
+                                    Earthquakes are natural phenomena caused by the sudden release of energy in the
+                                    Earth's crust, resulting in seismic waves that shake the ground.
+                                </p>
+                                <a href="/earthquake" target="_blank">Click here to know about earthquakes updates</a>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="swiper-button-next">
+                        <i class='bx bx-chevron-right'></i>
+                    </div>
+                    <div class="swiper-button-prev">
+                        <i class='bx bx-chevron-left'></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        
+   <section class="disaster-section">
+            <h1>Natural Disaster Dos and Don'ts</h1><br>
+            <div class="disaster-container" id="do&dont's">
+                <!-- Earthquake -->
+                <div class="disaster-card">
+                    <div class="disaster-card-inner">
+                        <div class="disaster-card-front">
+                            <h2>Earthquake</h2><br>
+                            <p>Detailed information about earthquakes, safety measures, and resources.</p><br><br><br>
+                            <img src="{{ url_for('static', filename='images/earthquake.jpg') }}" alt="" class="disaster__img">
+
+                        </div>
+                        <div class="disaster-card-back">
+                            <h3 class="green">Dos</h3>
+                            <ul>
+                                <li>Drop to your hands and knees to prevent being knocked over.</li>
+                                <li>Cover your head and neck with your arms.</li>
+                                <li>Stay indoors and away from windows.</li>
+                                <li>If outside, move to an open area away from buildings and power lines.</li>
+                                <li>Keep a flashlight and emergency kit nearby in case of power outages.</li>
+                                <li>Establish a communication plan.</li>
+
+                            </ul>
+                            <h3 class="red" >Don'ts</h3>
+                            <ul>
+                                <li>Do not run outside during shaking.</li>
+                                <li>Do not use elevators.</li>
+                                <li>Do not stand in doorways.</li>
+                                <li>Do not stay under heavy objects that could fall.</li>
+                                <li>Do not use matches, lighters, or any open flames due to potential gas leaks.</li>
+                                <li>Wait for emergency personnel.</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Repeat similar structure for other disaster cards -->
+                <!-- Flood -->
+                <div class="disaster-card">
+                    <div class="disaster-card-inner">
+                        <div class="disaster-card-front">
+                            <h2>Flood</h2>
+                            <p>Detailed information about floods, safety measures, and resources.</p><br><br><br>
+                            <img src="{{ url_for('static', filename='images/flood.avif') }}" alt="" class="disaster__img">
+                        </div>
+                        <div class="disaster-card-back">
+                            <h3 class="green">Dos</h3>
+                            <ul>
+                                <li>Move to higher ground immediately.</li>
+                                <li>Follow evacuation orders from authorities.</li>
+                                <li>Avoid driving or walking through flooded areas.</li>
+                                <li>Turn off utilities if instructed to do so.</li>
+                                <li>Keep a battery-powered radio or phone charged to receive emergency updates.</li>
+<!--                                <li>Secure important documents in waterproof containers.</li>-->
+
+                            </ul>
+                            <h3 class="red">Don'ts</h3>
+                            <ul>
+                                <li>Do not stay in areas that are prone to flooding.</li>
+                                <li>Do not touch electrical equipment with wet hands.</li>
+                                <li>Do not attempt to swim through strong currents.</li>
+                                <li>Do not ignore warnings or advisories from local officials.</li>
+                                <li>Do not use contaminated water for drinking, washing, or preparing food.</li>
+<!--                                <li>Do not return to affected areas until authorities declare it safe.</li>-->
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hurricane -->
+                <div class="disaster-card">
+                    <div class="disaster-card-inner">
+                        <div class="disaster-card-front">
+                            <h2>Hurricane</h2>
+                            <p>Detailed information about hurricanes, safety measures, and resources.</p><br><br><br>
+                            <img src="{{ url_for('static', filename='images/storm.jpg') }}" alt="" class="disaster__img">
+                        </div>
+                        <div class="disaster-card-back">
+                            <h3 class="green">Dos</h3>
+                            <ul>
+                                <li>Listen to weather updates and evacuation orders.</li>
+                                <li>Secure windows and doors, and reinforce your home if possible.</li>
+                                <li>Stock up on emergency supplies like food, water, and medications.</li>
+                                <li>Move to a safe location away from coastal areas.</li>
+                                <li>Unplug electrical appliances to prevent damage from power surges.</li>
+
+                            </ul>
+                            <h3 class="red">Don'ts</h3>
+                            <ul>
+                                <li>Do not go outside during the storm.</li>
+                                <li>Do not drive through flooded roads.</li>
+                                <li>Do not use candles or open flames during power outages.</li>
+                                <li>Do not neglect to follow local emergency instructions.</li>
+                                <li>Do not underestimate the storm's strength or delay your evacuation plans.</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Drought -->
+                <div class="disaster-card">
+                    <div class="disaster-card-inner">
+                        <div class="disaster-card-front">
+                            <h2>Drought</h2>
+                            <p>Detailed information about droughts, safety measures, and resources.</p><br><br><br>
+                            <img src="{{ url_for('static', filename='images/drought.jpg') }}" alt="" class="disaster__img">
+                        </div>
+                        <div class="disaster-card-back">
+                            <h3 class="green">Dos</h3>
+                            <ul>
+                                <li>Conserve water by reducing usage and fixing leaks.</li>
+                                <li>Use drought-resistant plants and landscaping.</li>
+                                <li>Follow local water restrictions and guidelines.</li>
+                                <li>Store water for emergency use and ensure proper sanitation.</li>
+                            </ul>
+                            <h3 class="red">Don'ts</h3>
+                            <ul>
+                                <li>Do not waste water on non-essential activities like washing cars.</li>
+                                <li>Do not ignore local water conservation rules.</li>
+                                <li>Do not overwater plants or use excessive amounts of water for irrigation.</li>
+                                <li>Do not rely on water supplies without proper purification.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+       <!--==================== VALUE ====================-->
+        <section class="value section" id="about">
+            <div class="value__container container grid">
+                <div class="value__images">
+                    <div class="value__orbe"></div>
+
+                    <div class="value__img">
+                        <image src="{{url_for('static', filename = 'images/value.png')}}" alt="">
+                    </div>
+                </div>
+
+                <div class="value__content">
+                    <div class="value__data">
+                        <span class="section__subtitle">About</span>
+                        <h2 class="section__title">What are we doing <span>?</span></h2>
+                        <p class="value__description">
+                            Our website offers a range of services designed to keep you informed and prepared for
+                            natural disasters
+                        </p>
+                    </div>
+                    <div class="value__accordion">
+                        <div class="value__accordion-item">
+                            <header class="value__accordion-header">
+                                <i class='bx bxs-time-five' ></i></i>
+                                <h3 class="value__accordion-title">
+                                    Real-Time Predictions
+                                </h3>
+                                <div class="value__accordion-arrow">
+                                    <i class="bx bxs-down-arrow"></i>
+                                </div>
+                            </header>
+
+                            <div class="value__accordion-content">
+                                <p class="value__accordion-description">
+                                    Access up-to-date forecasts and early warning alerts for various types of natural
+                                    disasters, including tornadoes, earthquakes, floods, and droughts.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="value__accordion-item">
+                            <header class="value__accordion-header">
+                                <i class='bx bxs-map' ></i>
+                                <h3 class="value__accordion-title">
+                                    Interactive Maps
+                                </h3>
+                                <div class="value__accordion-arrow">
+                                    <i class="bx bxs-down-arrow"></i>
+                                </div>
+                            </header>
+
+                            <div class="value__accordion-content">
+                                <p class="value__accordion-description">
+                                    Utilize our interactive maps to visualize disaster risks and track ongoing events in
+                                    your region.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="value__accordion-item">
+                            <header class="value__accordion-header">
+                                <i class='bx bxs-book-reader' ></i>
+                                <h3 class="value__accordion-title">
+                                    Educational Resources
+                                </h3>
+                                <div class="value__accordion-arrow">
+                                    <i class="bx bxs-down-arrow"></i>
+                                </div>
+                            </header>
+
+                            <div class="value__accordion-content">
+                                <p class="value__accordion-description">
+                                    Explore our extensive library of articles, guides, and tutorials on disaster
+                                    preparedness, safety tips, and emergency response strategies.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="value__accordion-item">
+                            <header class="value__accordion-header">
+                                <i class='bx bxs-bell-ring' ></i>
+                                <h3 class="value__accordion-title">
+                                    Customized Alerts
+                                </h3>
+                                <div class="value__accordion-arrow">
+                                    <i class="bx bxs-down-arrow"></i>
+                                </div>
+                            </header>
+
+                            <div class="value__accordion-content">
+                                <p class="value__accordion-description">
+                                    Sign up for personalized notifications and alerts based on your location and
+                                    specific risk factors.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+            <section class="team-section">
+                <h2>Meet Our Team</h2>
+                <div class="team-container">
+                    <div class="team-member">
+                        <img src="{{url_for('static', filename = 'images/member1.jpg')}}" alt="Team Member 1" class="member-photo">
+                        <h3>Subhamita Chakraborty</h3>
+                        <p class="job-title">Machine Learning Engineer</p>
+                        <p class="description">Subhamita leverages advanced algorithms and data analysis to develop and implement machine learning models.</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="{{url_for('static', filename = 'images/member2.jpg')}}" alt="Team Member 2" class="member-photo">
+                        <h3>Shubhangi Agrawal</h3>
+                        <p class="job-title">Bankend Developer</p>
+                        <p class="description">Subhangi designs and implements server-side logic, databases, and APIs to ensure smooth and efficient operations.</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="{{url_for('static', filename = 'images/member3.jpg')}}" alt="Team Member 3" class="member-photo">
+                        <h3>Manish kumar</h3>
+                        <p class="job-title">Cloud Engineer</p>
+                        <p class="description">Manish manages cloud infrastructure, ensuring scalability, reliability, and security for our applications and services.</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="{{url_for('static', filename = 'images/member4.jpg')}}" alt="Team Member 4" class="member-photo">
+                        <h3>Archie arya</h3>
+                        <p class="job-title">Frontend Developer</p>
+                        <p class="description">Archie crafts engaging and interactive user interfaces, ensuring a seamless experience for all users.</p>
+                    </div>
+                </div>
+            </section>
+        
+        
+        <!--==================== CONTACT ====================-->
+        <section class="contact section" id="contact">
+            <div class="contact__container container grid">
+                <div class="contact__images">
+                    <div class="contact__orbe"></div>
+                    <div class="contact__img">
+                        <image src="{{url_for('static', filename = 'images/contact.jpg')}}" alt="">
+                    </div>
+                </div>
+
+                <div class="contact__content">
+                    <div class="contact__data">
+                        <span class="section__subtitle">Contact Us</span>
+                        <h2 class="section__title">
+                            Easy to Contact us <span>.</span>
+                        </h2>
+                        <p class="contact__description">
+                            If you are facing any problem just contact us.
+                        </p>
+                    </div>
+
+                    <div class="contact__card">
+                        <div class="contact__card-box">
+                            <div class="contact__card-info">
+                                <i class='bx bx-phone-call'></i>
+                                <div>
+                                    <h3 class="contact__card-title">
+                                        Call
+                                    </h3>
+                                    <p class="contact__card-description">
+                                        +91 1234567889
+                                    </p>
+                                </div>
+                            </div>
+
+                            <button class="button contact__card-button">
+                                Call Now
+                            </button>
+                        </div>
+
+                        <div class="contact__card-box">
+                            <div class="contact__card-info">
+                                <i class='bx bxs-message-rounded-dots'></i>
+                                <div>
+                                    <h3 class="contact__card-title">
+                                        Chat
+                                    </h3>
+                                    <p class="contact__card-description">
+                                        +91 1234567889
+                                    </p>
+                                </div>
+                            </div>
+
+                            <button class="button contact__card-button">
+                                Chat Now
+                            </button>
+                        </div>
+
+                        <div class="contact__card-box">
+                            <div class="contact__card-info">
+                                <i class='bx bxs-video'></i>
+                                <div>
+                                    <h3 class="contact__card-title">
+                                        Video Call
+                                    </h3>
+                                    <p class="contact__card-description">
+                                        +91 1234567889
+                                    </p>
+                                </div>
+                            </div>
+
+                            <button class="button contact__card-button">
+                                Video call now
+                            </button>
+                        </div>
+
+                        <div class="contact__card-box">
+                            <div class="contact__card-info">
+                                <i class='bx bxs-envelope'></i>
+                                <div>
+                                    <h3 class="contact__card-title">
+                                        Email
+                                    </h3>
+                                    <p class="contact__card-description">
+                                        pralay@gmail.com
+                                    </p>
+                                </div>
+                            </div>
+
+                            <button class="button contact__card-button">
+                                Email now
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<section class="helpline-section" id="helpline">
+            <h2>Emergency Helplines</h2>
+            <div class="helpline-container">
+                <div class="helpline-item">
+                    <h3>Police Emergency</h3>
+                    <p><a href="tel:100">100</a></p>
+                </div>
+                <div class="helpline-item">
+                    <h3>Fire Services</h3>
+                    <p><a href="tel:101">101</a></p>
+                </div>
+                <div class="helpline-item">
+                    <h3>Ambulance Services</h3>
+                    <p><a href="tel:102">102 / </a> <a href="tel:108">108</a></p>
+                </div>
+                <div class="helpline-item">
+                    <h3>National Disaster Management Authority(NDMA)</h3>
+                    <p><a href="tel:+911126701728">+91-11-26701728</a></p>
+                </div>
+                <div class="helpline-item">
+                    <h3>National Disaster Response Force(NDRF)</h3>
+                    <p><a href="tel:+911123353808">+91-11-23353808</a></p>
+                </div>
+                <div class="helpline-item">
+                    <h3>Indian Meteorological Department(IMD)</h3>
+                    <p><a href="tel:+912222623073">+91-22-22623073</a></p>
+                </div>
+                <div class="helpline-item">
+                    <h3>Ministry of Home Affairs(MHA)</h3>
+                    <p><a href="tel:+911123092800">+91-11-23092800 / 23092850</a></p>
+                </div>
+                <div class="helpline-item">
+                    <h3>National Centre for Seismology (NCS)</h3>
+                    <p><a href="tel:+911123356044">+91-11-23356044</a></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+
+    <!--==================== FOOTER ====================-->
+    <footer class="footer section">
+        <div class="footer_container container grid">
+            <div>
+                <a href="#" class="footer__logo">
+                    PralaySePhle<i class='bx bx-home'></i>
+                </a>
+                <p class="footer__description">Our vision is to make all people aware of<br> the natural disasters which
+                    are going to occur in future<br><br><br><br></p>
+            </div>
+            <div class="footer__content">
+                <div>
+                    <h3 class="footer__title">
+                        About
+                    </h3>
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#" class="footer__link">About us</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Features</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">News & Blog</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer__title">
+                        Company
+                    </h3>
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#" class="footer__link">How We Work?</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Capital</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Security</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer__title">
+                        Support
+                    </h3>
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#" class="footer__link">FAQs</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Support center</a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="footer__title">
+                        Follow us
+                    </h3>
+                    <ul class="footer__links">
+                        <li>
+                            <a href="#" class="footer__link"><i class='bx bxl-facebook-circle'></i></a>
+                        </li>
+                        <li>
+                            <a href="#" class="footer__link"><i class="bx bxl-instagram-alt"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/shu03bh/PralaySe__Phle" class="footer__link"><i class='bx bxl-github'></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__info container">
+            <span class="footer__copy">
+                &#169; PralaySePhle. All rights reserved
+            </span>
+
+            <div class="footer__privacy">
+                <a href="#">Terms & Agreements</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+        </div>
+    </footer>
+
+
+<button class="chatbot-toggler">
+        <span class="material-symbols-outlined">mode_comment</span>
+        <span class="material-symbols-outlined">close</span>
+    </button>
+    <div class="chatbot">
+        <header>
+            <h2>Chatbot</h2>
+            <span class="close-btn material-symbols-outlined">close</span>
+        </header>
+        <ul class="chatbox">
+            <li class="chat incoming">
+                <span class="material-symbols-outlined">smart_toy</span>
+                <p>Hi there <br>How can I help you today?</p>
+            </li>
+        </ul>
+        <div class="chat-input">
+            <textarea placeholder="Enter a message..." required></textarea>
+            <span id="send-btn" class="material-symbols-outlined">send</span>
+        </div>
+    </div>
+
+    <!--========== SCROLL UP ==========-->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class='bx bxs-chevrons-up'></i>
+    </a>
+
+<!--=============== SCROLLREVEAL ===============-->
+    <script type = "text/javascript" src = "{{url_for('static', filename = 'script/scrollreveal.min.js')}}"></script>
+
+    <!--=============== SWIPER JS ===============-->
+    <script type = "text/javascript" src = "{{url_for('static', filename = 'script/swiper-bundle.min.js')}}"></script>
+
+    <!--=============== MAIN JS ===============-->
+   <script type = "text/javascript" src = "{{url_for('static', filename = 'script/main.js')}}"></script>
+    <script type = "text/javascript" src = "{{url_for('static', filename = 'script/chatbot.js')}}"></script>
+
+
+</html>
